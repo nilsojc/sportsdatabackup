@@ -2,11 +2,11 @@
   <img src="assets/diagram.png" 
 </p>
   
-## ☁️ MultiCloud, DevOps & AI Challenge — Day 5 — Implementing analytics integration and deploying E-commerce Cloudmart to Production ☁️
+## ☁️ 30 Days DevOps Challenge - Automating Sports Data Highlights  ☁️
 
 This is part of the final project of the Multicloud, Devops and AI Challenge!
 
-In this project I focused on implementing analytics integrations and deploying CloudMart to production through seamless update and usage of Multicloud (AWS, Google Cloud and Azure). The process encompassed code updates, analytics configuration, and deployment automation.
+In this project I automated and deployed Sports highlights 
 
 
 
@@ -14,6 +14,9 @@ In this project I focused on implementing analytics integrations and deploying C
 <h2>Environments and Technologies Used</h2>
 
   - Amazon Web Services (AWS)
+  - RapidAPI
+  - DynamoDB
+  - ECS Fargate
   - 
 
 
