@@ -10,7 +10,7 @@ RAPIDAPI_HOST = os.getenv("RAPIDAPI_HOST", "sport-highlights-api.p.rapidapi.com"
 RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY")  # No default, must be set at runtime
 
 # Use the current day in YYYY-MM-DD format as the default date
-DATE = os.getenv("DATE", datetime.utcnow().strftime("%Y-%m-%d"))
+DATE = os.getenv("DATE", "2024-12-07")
 LEAGUE_NAME = os.getenv("LEAGUE_NAME", "Major League Soccer")
 LIMIT = int(os.getenv("LIMIT", "10"))
 

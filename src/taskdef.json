@@ -1,41 +1,41 @@
 {
-  "family": "",
+  "family": "sports-backup-task",
   "networkMode": "awsvpc",
-  "executionRoleArn": "",
-  "taskRoleArn": "",
+  "executionRoleArn": "arn:aws:iam::137068224350:role/ecsTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::137068224350:role/ecsTaskExecutionRole",
   "requiresCompatibilities": [
     "FARGATE"
   ],
-  "cpu": "",
-  "memory": "",
+  "cpu": "512",
+  "memory": "1024",
   "containerDefinitions": [
     {
-      "name": "",
-      "image": "",
+      "name": "sports-backup-container",
+      "image": "137068224350.dkr.ecr.us-east-1.amazonaws.com/sports-backup:latest",
       "essential": true,
       "environment": [
-        { "name": "API_URL", "value": "" },
-        { "name": "RAPIDAPI_HOST", "value": "" },
-        { "name": "RAPIDAPI_KEY", "value": "" },
+        { "name": "API_URL", "value": "https://sport-highlights-api.p.rapidapi.com/soccer/highlights" },
+        { "name": "RAPIDAPI_HOST", "value": "sport-highlights-api.p.rapidapi.com" },
+        { "name": "RAPIDAPI_KEY", "value": "e005e3b9b7mshf3c0f47bafb9661p1330cejsnaffd1b1fb032" },
         { "name": "LEAGUE_NAME", "value": "" },
-        { "name": "LIMIT", "value": "" },
-        { "name": "S3_BUCKET_NAME", "value": "" },
-        { "name": "AWS_REGION", "value": "" },
-        { "name": "DYNAMODB_TABLE", "value": "" },
-        { "name": "MEDIACONVERT_ENDPOINT", "value": "" },
-        { "name": "MEDIACONVERT_ROLE_ARN", "value": "" },
-        { "name": "INPUT_KEY", "value": "" },
+        { "name": "LIMIT", "value": "10" },
+        { "name": "S3_BUCKET_NAME", "value": "soccer-newhighlight-final" },
+        { "name": "AWS_REGION", "value": "us-east-1" },
+        { "name": "DYNAMODB_TABLE", "value": "SportsHighlights" },
+        { "name": "MEDIACONVERT_ENDPOINT", "value": "https://q25wbt2lc.mediaconvert.us-east-1.amazonaws.com" },
+        { "name": "MEDIACONVERT_ROLE_ARN", "value": "arn:aws:iam::137068224350:role/HighlightProcessorRole" },
+        { "name": "INPUT_KEY", "value": "highlights/soccer_highlights.json" },
         { "name": "OUTPUT_KEY_PREFIX", "value": "" },
-        { "name": "RETRY_COUNT", "value": "" },
-        { "name": "RETRY_DELAY", "value": "" },
-        { "name": "WAIT_TIME_BETWEEN_SCRIPTS", "value": "" }
+        { "name": "RETRY_COUNT", "value": "3" },
+        { "name": "RETRY_DELAY", "value": "30" },
+        { "name": "WAIT_TIME_BETWEEN_SCRIPTS", "value": "60" }
       ],
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
           "awslogs-group": "",
-          "awslogs-region": "",
-          "awslogs-stream-prefix": ""
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
         }
       }
     }

@@ -7,7 +7,7 @@
         "Action": [
           "s3:ListBucket"
         ],
-        "Resource": "arn:aws:s3:::"
+        "Resource": "arn:aws:s3:::soccer-newhighlight-final"
       },
       {
         "Sid": "S3ObjectActions",
@@ -17,7 +17,7 @@
           "s3:PutObject",
           "s3:DeleteObject"
         ],
-        "Resource": "arn:aws:s3:::/*"
+        "Resource": "arn:aws:s3:::soccer-newhighlight-final/*"
       },
       {
         "Sid": "DynamoDBTableActions",
@@ -29,7 +29,7 @@
           "dynamodb:Query",
           "dynamodb:Scan"
         ],
-        "Resource": "arn:aws:dynamodb:::table/"
+        "Resource": "arn:aws:dynamodb:us-east-1:137068224350:table/SportsHighlights"
       }
     ]
   }

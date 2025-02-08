@@ -17,7 +17,7 @@ from config import (
 
 def fetch_highlights():
     """
-    Fetch basketball highlights from the API.
+    Fetch soccer highlights from the API.
     """
     try:
         query_params = {
@@ -106,13 +106,13 @@ def store_highlights_to_dynamodb(highlights):
 
 def process_highlights():
     """
-    Main function to fetch and process basketball highlights.
+    Main function to fetch and process soccer highlights.
     """
     print("Fetching highlights...")
     highlights = fetch_highlights()
     if highlights:
         print("Saving highlights to S3...")
-        save_to_s3(highlights, "basketball_highlights")
+        save_to_s3(highlights, "soccer_highlights")
         print("Storing highlights in DynamoDB...")
         store_highlights_to_dynamodb(highlights)
 

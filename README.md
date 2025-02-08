@@ -147,8 +147,40 @@ Lastly, we will proceed with pushing the image
 docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/sports-backup:latest
 ```
 
-***5. Create AWS Resources, Setting up EventBridge and Testing ECS Task - Final Result***
+***5. Create ECS Task Definition and Role configuration***
 
+In this step, we will be creating a task definition to be set with Elastic Container Services, as well as set up Cloudwatch logs and the roles necessary to execute our project.
+
+First, we create the task definition with our generated json file:
+
+```
+aws ecs register-task-definition --cli-input-json file://taskdef.json --region us-east-1
+```
+
+The, we create the Cloudwatch log group
+
+```
+aws logs create-log-group --log-group-name "${AWS_LOGS_GROUP}" --region ${AWS_REGION}
+```
+
+Next, we will attach the S3/DynamoDB Policy to the ECS Task Execution Role
+
+```
+aws iam put-role-policy \
+  --role-name ecsTaskExecutionRole \
+  --policy-name S3DynamoDBAccessPolicy \
+  --policy-document file://s3_dynamodb_policy.json
+```
+
+And finally, we will create and attach the ECS role
+
+```
+aws iam create-role --role-name ecsEventsRole --assume-role-policy-document file://ecsEventsRole-trust.json
+aws iam put-role-policy --role-name ecsEventsRole --policy-name ecsEventsPolicy --policy-document file://ecseventsrole-policy.json
+```
+
+
+***6. Setting up EventBridge and Testing ECS Task - Final Result***
 
 <h2>Conclusion</h2>
 
