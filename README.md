@@ -110,7 +110,9 @@ Now, setting the ECS Target
 
 And finally, setting the ECS Events role policy:
 
-`envsubst < ecseventsrole-policy.template.json > ecseventsrole-policy.json`
+`envsubst < ecsEventsRole-policy.template.json > ecseventsrole-policy.json`
+
+NOTE: Make sure that you install envsubst
 
 ***4. Build and Push Docker Image***
 
@@ -125,7 +127,7 @@ aws ecr create-repository --repository-name sports-backup
 We will then log in to ECR
 
 ```bash
-aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin .dkr.ecr.us-east-1.amazonaws.com
+aws ecr get-login-password --region ${AWS_REGION} | docker login --username AWS --password-stdin accountid.dkr.ecr.us-east-1.amazonaws.com
 ```
 
 Next, we will build our docker image

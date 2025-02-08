@@ -1,0 +1,43 @@
+{
+  "family": "",
+  "networkMode": "awsvpc",
+  "executionRoleArn": "",
+  "taskRoleArn": "",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "",
+  "memory": "",
+  "containerDefinitions": [
+    {
+      "name": "",
+      "image": "",
+      "essential": true,
+      "environment": [
+        { "name": "API_URL", "value": "" },
+        { "name": "RAPIDAPI_HOST", "value": "" },
+        { "name": "RAPIDAPI_KEY", "value": "" },
+        { "name": "LEAGUE_NAME", "value": "" },
+        { "name": "LIMIT", "value": "" },
+        { "name": "S3_BUCKET_NAME", "value": "" },
+        { "name": "AWS_REGION", "value": "" },
+        { "name": "DYNAMODB_TABLE", "value": "" },
+        { "name": "MEDIACONVERT_ENDPOINT", "value": "" },
+        { "name": "MEDIACONVERT_ROLE_ARN", "value": "" },
+        { "name": "INPUT_KEY", "value": "" },
+        { "name": "OUTPUT_KEY_PREFIX", "value": "" },
+        { "name": "RETRY_COUNT", "value": "" },
+        { "name": "RETRY_DELAY", "value": "" },
+        { "name": "WAIT_TIME_BETWEEN_SCRIPTS", "value": "" }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "",
+          "awslogs-region": "",
+          "awslogs-stream-prefix": ""
+        }
+      }
+    }
+  ]
+}

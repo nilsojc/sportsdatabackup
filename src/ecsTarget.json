@@ -1,0 +1,23 @@
+[
+  {
+    "Id": "1",
+    "Arn": "arn:aws:ecs:::cluster/",
+    "RoleArn": "arn:aws:iam:::role/",
+    "EcsParameters": {
+      "TaskDefinitionArn": "arn:aws:ecs:::task-definition/:",
+      "TaskCount": 1,
+      "LaunchType": "FARGATE",
+      "NetworkConfiguration": {
+        "awsvpcConfiguration": {
+          "Subnets": [
+            ""
+          ],
+          "SecurityGroups": [
+            ""
+          ],
+          "AssignPublicIp": "ENABLED"
+        }
+      }
+    }
+  }
+]

@@ -5,13 +5,13 @@ from datetime import datetime
 ###################################
 # RapidAPI & Fetch-Related Config
 ###################################
-API_URL = os.getenv("API_URL", "https://sport-highlights-api.p.rapidapi.com/basketball/highlights")
+API_URL = os.getenv("API_URL", "https://sport-highlights-api.p.rapidapi.com/football/highlights")
 RAPIDAPI_HOST = os.getenv("RAPIDAPI_HOST", "sport-highlights-api.p.rapidapi.com")
 RAPIDAPI_KEY = os.getenv("RAPIDAPI_KEY")  # No default, must be set at runtime
 
 # Use the current day in YYYY-MM-DD format as the default date
 DATE = os.getenv("DATE", datetime.utcnow().strftime("%Y-%m-%d"))
-LEAGUE_NAME = os.getenv("LEAGUE_NAME", "NCAA")
+LEAGUE_NAME = os.getenv("LEAGUE_NAME", "Major League Soccer")
 LIMIT = int(os.getenv("LIMIT", "10"))
 
 ###################################
@@ -34,7 +34,7 @@ MEDIACONVERT_ROLE_ARN = os.getenv("MEDIACONVERT_ROLE_ARN")
 ###################################
 # Video Paths in S3
 ###################################
-INPUT_KEY = os.getenv("INPUT_KEY", "highlights/basketball_highlights.json")
+INPUT_KEY = os.getenv("INPUT_KEY", "highlights/soccer_highlights.json")
 # Note: For multiple videos, you may want to use a key pattern rather than a fixed name.
 OUTPUT_KEY_PREFIX = os.getenv("OUTPUT_KEY_PREFIX", "videos/")
 
