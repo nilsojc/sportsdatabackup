@@ -182,6 +182,32 @@ aws iam put-role-policy --role-name ecsEventsRole --policy-name ecsEventsPolicy 
 
 ***6. Setting up EventBridge and Testing ECS Task - Final Result***
 
+In this step, we will be creating a rule for setting up an event with Eventbridge as well as run the ECS task created.
+
+We first begin by creating the EventBridge rule:
+
+```
+aws events put-rule --name SportsBackupScheduleRule --schedule-expression "rate(1 day)" --region ${AWS_REGION}
+```
+
+Then, we add the target
+
+```
+aws events put-targets --rule SportsBackupScheduleRule --targets file://ecsTarget.json --region ${AWS_REGION}
+```
+
+And finally, we test the ECS task. 
+
+```
+aws ecs run-task \
+  --cluster sports-backup-cluster \
+  --launch-type Fargate \
+  --task-definition ${TASK_FAMILY} \
+  --network-configuration "awsvpcConfiguration={subnets=[\"${SUBNET_ID}\"],securityGroups=[\"${SECURITY_GROUP_ID}\"],assignPublicIp=\"ENABLED\"}" \
+  --region ${AWS_REGION}
+```
+
+
 <h2>Conclusion</h2>
 
-The successful completion of these integrations and deployments established CloudMart as a production-ready platform with robust analytics capabilities and scalable infrastructure.
+
