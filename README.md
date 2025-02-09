@@ -17,7 +17,7 @@ In this project I automated and deployed Sports highlights which will be stored 
   - Elastic Container Services
   - Amazon S3
   - Docker
-  
+  - Cloudwatch
 
 
   
