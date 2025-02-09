@@ -6,7 +6,7 @@
 
 This is part of the final project of the Multicloud, Devops and AI Challenge!
 
-In this project I automated and deployed Sports highlights which will be stored in S3 and DynamoDB and runs on a automated schedule using ECS Fargate and EventBridge. It processes videos, and uses template JSON files with environemnt variables for easy configuration and production release. 
+In this project I automated and deployed Sports highlights which will be stored in S3 and DynamoDB and runs on a automated schedule using ECS Fargate and EventBridge. It processes videos, and uses template JSON files with environment variables for easy configuration and production release. 
 
 
 <h2>Environments and Technologies Used</h2>
@@ -14,15 +14,19 @@ In this project I automated and deployed Sports highlights which will be stored 
   - Amazon Web Services (AWS)
   - RapidAPI
   - DynamoDB
-  - ECS Fargate
+  - Elastic Container Services
   - Amazon S3
+  - Docker
+  
 
 
   
 <h2>Key Features</h2>  
 
 ✅ Automated Sports Highlights Extraction: Automatically processes and extracts highlights from sports videos, saving time and effort.
+
 ✅ Runs on a fully automated schedule using Amazon EventBridge, ensuring timely processing without manual intervention.
+
 ✅ Simplified deployment process with environment variables and reusable templates, making it easy to maintain and update.
 
 <h2>Step by Step Instructions</h2>
@@ -157,10 +161,10 @@ First, we create the task definition with our generated json file:
 aws ecs register-task-definition --cli-input-json file://taskdef.json --region us-east-1
 ```
 
-The, we create the Cloudwatch log group
+Then, we create the Cloudwatch log group
 
 ```
-aws logs create-log-group --log-group-name "${AWS_LOGS_GROUP}" --region ${AWS_REGION}
+aws logs create-log-group --log-group-name "${AWS_LOGS_GROUP}" --region us-east-1
 ```
 
 Next, we will attach the S3/DynamoDB Policy to the ECS Task Execution Role

@@ -1,1 +1,4 @@
 .env
+taskdef.json
+ecsTarget.json
+s3_dynamodb_policy.json
