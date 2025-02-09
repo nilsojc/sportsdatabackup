@@ -4,7 +4,7 @@
   
 ## ☁️ 30 Days DevOps Challenge - Automating Sports Data Highlights  ☁️
 
-This is part of the final project of the Multicloud, Devops and AI Challenge!
+This is part of Week 3 for the 30-day DevOps Challenge!
 
 In this project I automated and deployed Sports highlights which will be stored in S3 and DynamoDB and runs on a automated schedule using ECS Fargate and EventBridge. It processes videos, and uses template JSON files with environment variables for easy configuration and production release. 
 
@@ -33,7 +33,7 @@ In this project I automated and deployed Sports highlights which will be stored 
 
 ***1. Repo and API configuration***
 
-We will begin by setting up the environment and code that we will be utilizing. In this instance, we will use gitpod to create a new workspace and do the commands from there. We will be setting up an account with RapidAPI for our Premier League Standings data.
+We will begin by setting up the environment and code that we will be utilizing. In this instance, we will use gitpod to create a new workspace and do the commands from there. We will be setting up an account with RapidAPI.
 
 I created a .yml script for gitpod where it will automatically install AWS CLI and set the AWS credentials with the environment variables defined in Gitpod. This makes sure that our future projects are automated and we can start right away.
 
@@ -64,7 +64,7 @@ We then do `AWS configure` and enter our access and secret key along with the re
 aws sts get-caller-identity
 ```
 
-And finally, we will also be installing `gettext` which is a command-line utility is used for environment variable substituition in shell scripts and text files.
+And finally, we will also be installing `gettext` which is a command-line utility is used for environment variable substitution in shell scripts and text files.
 
 ```
 sudo apt-get update 
