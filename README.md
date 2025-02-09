@@ -214,4 +214,5 @@ aws ecs run-task \
 
 <h2>Conclusion</h2>
 
+With this tool we are able to fetch Sports highlights with RapidAPI keys, store them in S3 and DynamoDB, and run an automated task by deploying docker containers of the application with an ECS task and Cloudwatch rules set up with EventsBridge.
 
